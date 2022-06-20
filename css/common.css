@@ -1,0 +1,69 @@
+@charset "utf-8";
+/* 초기화 */
+body, h1, h2, h3, h4, p, ul, dl, dd, figure, fieldset, input, th, td { margin: 0; padding: 0; }
+ul li { list-style: none; }
+a { text-decoration: none; }
+address { font-style: normal; }
+fieldset { border: 0; }
+table { border-collapse: collapse; }
+hr { display: none; }
+.hidden { position: absolute; left: -9999px; }
+/* 웹폰트 segoe */
+@font-face {
+    font-family: segoe;
+    src: url(../font/segoeui.ttf),
+        url(../font/segoeui.eot),
+        url(../font/segoeui.woff);
+}
+body { position: relative;
+      min-width: 1200px;
+      font-family: "Segoe UI", segoe, sans-serif; }
+/* 헤더 */
+#header { display: flex; justify-content: center; align-items: center;
+          width: 100%; height: 100px; background: #fff; }
+#header h1 { position: absolute; top: 25px; left: 20px; width: 249px; height: 51px; }
+#header h1 a { display: block; height: 100%; text-indent: -9999px;
+              background: url(../images/logo.png) no-repeat center / cover; } /* a태그에 로고 적용 */
+/* 멤버쉽 네비 */
+#membership { position: absolute; top: 30px; right: 70px; }
+#membership ul { display: flex; }
+#membership ul li { position: relative; }
+#membership ul li.goLogin { padding-right: 10px; }
+#membership ul li.goJoin { padding-left: 10px; }
+#membership ul li.goLogin::after { content: ""; position: absolute; top: 7px; right: 0;
+                                  height: 11px; border-right: 1px solid #bea082; }
+#membership ul li.goJoin::before { content: ""; position: absolute; top: 7px; left: 0;
+                                  height: 11px; border-right: 1px solid #82a0be;}
+#membership ul li a { color: #333; }
+/* gnb */
+#gnb ul { display: flex; }
+#gnb ul li { margin: 0 5px; }
+#gnb ul li a { padding: 0 10px; color: #333; text-transform: uppercase;  }
+#gnb ul li a:hover { padding-bottom: 10px; border-bottom: 3px solid #00bff3; }
+
+/* 푸터 */
+#footerWrap { border-top: 1px solid #a0a0a0; }
+#footer { display: flex; justify-content: space-between;
+          /* width: 1200px; margin: 0 auto; */
+          padding: 23px 80px 30px 200px; box-sizing: border-box;
+          background: url(../images/logoFooter.png) no-repeat 54px 24px; }
+#footer .sns { display: flex; }
+#footer .sns li { width: 33px; margin-left: 17px; }
+#footer .sns li a { display: block; height: 33px; text-indent: -9999px;
+                    background: url(../images/bgSns.png) no-repeat; }
+#footer .sns .twitter a { background-position-x: right; }
+/* 1200 이하 미디어쿼리를 각자 적용해 보시오 */
+/* @media screen and (max-width: 1200px) {
+  #header { display: block; height: 70px; }
+  #header h1 { transform: scale(0.7); top: 10px;  }
+  #gnb { position: absolute; top: 70px; left: 0; z-index: 999;
+        width: 100%; border-top: 1px solid #b5b5b5; background: #fff; }
+  #gnb ul { justify-content: space-evenly; }
+  #gnb ul li { flex: 1; margin: 0; text-align: center; }
+  #gnb ul li a { display: block; padding: 0; line-height: 50px; }
+  #gnb ul li a:hover { padding: 0; border: 0; background: #eb2a2a; color: #fff; }
+  #slogan { margin-top: 20px; }
+  #solution { width: 100%; }
+  #customerBoard { width: 100%; }
+  #footer { padding: 30px; background: none; }
+} */
